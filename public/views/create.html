@@ -1,0 +1,24 @@
+<div class="login-register-wrapper">
+	<div class="login-register-menu">
+		<ul>
+			<li ng-click="joinToggle()"> Join Game </li>
+			<li ng-click="createToggle()"> Create Game </li>
+		</ul>
+	</div>
+</div>
+<div class="forms-container">
+	<div class="login-register-form" ng-show="create">
+		<form role="form" name="createForm" ng-submit="createGroup()">
+			<div class="form-group">
+				<label> New Group Name </label>
+				<input type="text" class="form-control" id="inputName" name="inputName" placeholder="Enter new group name" ng-model="group.name" required>
+				<p class="error" ng-if="createForm.inputName.$error.required && createForm.inputName.$dirty">
+					Group name is required
+				</p>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-default" ng-disabled="createForm.$invalid"> Submit </button>
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app='truth'>
+	<head>
+		<meta charset="UTF-8" name="viewport" contents="width=device-width, initial-scale=1">
+		<title>Truth or Truth</title>
+		<link rel="stylesheet" type="text/css" href="styles/normalize.css">
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body ng-controller='mainCtrl'>
+		<div class="header-wrapper">
+			<header>
+				<div class="site-name">
+					<a href="index.html">Truth or Truth</a>
+				</div>
+				<div class="site-menu">
+					<ul class="nav nav-pills">
+						<li><a href="#">Leave Game</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</header>
+		</div>
+
+		<div ng-view></div>
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+		<script src="cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js"></script>
+	</body>
+</html>
