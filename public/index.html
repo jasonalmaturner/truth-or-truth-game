@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	</head>
-	<body ng-controller='mainCtrl'>
+	<body>
 		<div class="header-wrapper">
 			<header>
 				<div class="site-name">
@@ -16,7 +16,8 @@
 				</div>
 				<div class="site-menu">
 					<ul class="nav nav-pills">
-						<li><a href="#">Leave Game</a></li>
+						<li><a href="#"> Leave Game </a></li>
+						<li><a href="/create"> Create Game </a></li>
 					</ul>
 				</div>
 				<div class="clear"></div>
@@ -26,6 +27,8 @@
 		<div ng-view></div>
 
 		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
-		<script src="cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js"></script>
+		<script src="/js/app.js"></script>
+		<script src="/js/controllers/loginCtrl.js"></script>
 	</body>
 </html>

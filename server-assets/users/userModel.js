@@ -5,7 +5,7 @@ ObjectId = Schema.ObjectId;
 var user = new Schema({
 	provider: { type: String },
 	providerUserId: { type: String },
-	displayName: { type: String, required: true },
+	displayName: { type: String },
 	accessToken: { type: String },
 	userId: { type: ObjectId, ref: 'User' },
 	name: { type: Object, 
