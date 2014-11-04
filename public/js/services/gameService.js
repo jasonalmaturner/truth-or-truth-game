@@ -5,8 +5,16 @@ app.service('gameService', function($http, $q){
 	this.createNewGroup = function(group){
 		return $http({
 			method: "POST",
-			url: 'http://localhost:9011/create',
+			url: '/create',
 			data: group
+		})
+	}
+
+	this.saveGame = function(gameId, userId){
+		return $http({
+			method: "PUT",
+			url: '/player/' + userId,
+			data: gameId
 		})
 	}
 

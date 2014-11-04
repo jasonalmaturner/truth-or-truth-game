@@ -7,7 +7,8 @@ var express = require('express'),
 	passport = require('passport'),
 	FacebookStrategy = require('passport-facebook').Strategy,
 	User = require('./server-assets/users/userModel'),
-	Game = require('./server-assets/game/gameController');
+	Game = require('./server-assets/game/gameController'),
+	userController = require('./server-assets/users/userController');
 
 
 app.use(bodyParser.json());
@@ -51,7 +52,7 @@ passport.serializeUser(function(user, done){
 });
 
 passport.deserializeUser(function(id, done){
-	User.findById(id).populate('game').exec(function(err, user) {
+	User.findById(id).populate('game.ref').exec(function(err, user) {
 		done(err, user);
 	})
 });
@@ -80,6 +81,7 @@ app.post('/create', requireAuth, Game.addGame);
 app.get('/player', function(req, res){
 	res.json(req.user);
 })
+app.put('/player/:id', userController.addGame)
 
 var port = 9011;
 

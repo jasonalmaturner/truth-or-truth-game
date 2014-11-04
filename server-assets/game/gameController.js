@@ -4,13 +4,17 @@ module.exports = {
 
 	addGame: function (req, res) {
 		var newGame = new gameModel(req.body);
-		newGame.save(function (err) {
+		newGame.save(function (err, data) {
 			if(err){
 				res.send(err);
 			} else {
-				res.status(200).send(req.body.name + ' was successfully added')
+				res.status(200).send(data)
 			}
 		});
 	}
+
+	// addQuestion: function (req, res) {
+		
+	// }
 
 }

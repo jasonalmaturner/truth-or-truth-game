@@ -22,7 +22,10 @@ var user = new Schema({
 	}],
 	facebookId: { type: String },
 	facebook: { type: Schema.Types.Mixed },
-	game: { type: ObjectId, ref: 'Game' }
+	game: { 
+		ref: { type: ObjectId, ref: 'Game' },
+		hat: { type: Boolean, default: false }
+	}
 
 })
 
