@@ -1,0 +1,22 @@
+{{games.}}
+<div class='forms-container'>
+	<div class='login-register-form'>
+		<form role='form' name='questionForm' ng-submit='question()'>
+			<div class='form-group'>
+				<label> Who is your question addressed to? </label>
+				<input type='text' class='form-control' id='inputAddressees' name='inputAddressees' placeholder='Enter question addressee(s)' ng-model='submit.addressee' required>
+				<p class='error' ng-if='questionForm.inputAddressees.$error.required && questionForm.inputAddressees.$dirty'>
+					Question addressee(s) required.
+				</p>
+			</div>
+			<div class='form-group'>
+				<label> Question </label>
+				<input type='text' class='form-control' id='inputQuestion' name='inputQuestion' placeholder='Enter question' ng-model='submit.question' required>
+				<p class='error' ng-if='questionForm.inputQuestion.$error.required && questionForm.inputQuestion.$dirty'>
+					Question is required.
+				</p>
+				<button type='submit' class='btn btn-default' ng-disabled='questionForm.$invalid'> Submit </button>
+			</div>
+		</form>
+	</div>
+</div>

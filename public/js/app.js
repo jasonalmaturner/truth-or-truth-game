@@ -11,6 +11,14 @@ app.config(function ($routeProvider){
 			templateUrl: '/templates/login.html',
 			controller: 'loginCtrl'
 		})
+    .when('/create', {
+      templateUrl: '/templates/create.html',
+      controller: 'gameCtrl'
+    })
+    .when('/player', {
+      templateUrl: '/templates/player.html',
+      controller: 'playerCtrl'
+    })
 })
 
 app.config(function($httpProvider) {

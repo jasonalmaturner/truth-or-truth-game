@@ -19,7 +19,11 @@ var user = new Schema({
 	}],
 	photos: [{ type: Array, 
 		value: { type: String },
-	}]
+	}],
+	facebookId: { type: String },
+	facebook: { type: Schema.Types.Mixed },
+	game: { type: ObjectId, ref: 'Game' }
+
 })
 
 module.exports = mongoose.model('User', user)

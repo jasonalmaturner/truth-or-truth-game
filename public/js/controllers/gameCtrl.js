@@ -24,5 +24,7 @@ app.controller('gameCtrl', function($scope, gameService, $location){
 		var gameId = $scope.group.name;
 		gameService.saveGame(gameId);
 	}
+
+	$scope.addQuestion
 	
 })
