@@ -1,4 +1,5 @@
-var gameModel = require('./gameModel');
+var gameModel = require('./gameModel'),
+	gameService = require('./gameService');
 
 module.exports = {
 
@@ -11,10 +12,16 @@ module.exports = {
 				res.status(200).send(data)
 			}
 		});
-	}
+	},
 
-	// addQuestion: function (req, res) {
-		
-	// }
+	addQuestion: function (req, res) {
+		gameService.addQuestion(req).then(function(err, res){
+			if(err){
+				res.send(err);
+			} else {
+				res.status(200).send(res);
+			}
+		})
+	}
 
 }

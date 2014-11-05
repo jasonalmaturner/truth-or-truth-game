@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var Schema = mongoose.Schema,
+ObjectId = Schema.Types.ObjectId;
 
 var game = new Schema({
 	name: {type: String, require: true, max: 10, uniqueness: true },

@@ -7,7 +7,7 @@ var express = require('express'),
 	passport = require('passport'),
 	FacebookStrategy = require('passport-facebook').Strategy,
 	User = require('./server-assets/users/userModel'),
-	Game = require('./server-assets/game/gameController'),
+	gameController = require('./server-assets/game/gameController'),
 	userController = require('./server-assets/users/userController');
 
 
@@ -77,11 +77,12 @@ var requireAuth = function(req, res, next) {
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/#/create', failureRedirect: '/'}));
-app.post('/create', requireAuth, Game.addGame);
+app.post('/create', requireAuth, gameController.addGame);
 app.get('/player', function(req, res){
 	res.json(req.user);
 })
-app.put('/player/:id', userController.addGame)
+app.put('/player/:id', userController.addGame);
+app.put('/game/:id/question', gameController.addQuestion);
 
 var port = 9011;
 

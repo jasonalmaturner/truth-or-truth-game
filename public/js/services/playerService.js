@@ -2,10 +2,10 @@ var app = angular.module('truth');
 
 app.service('playerService', function($http, $q){
 
-	this.sendQuestion = function(info){
+	this.sendQuestion = function(info, gameId){
 		return $http({
-			method: "POST",
-			url: '/player',
+			method: "PUT",
+			url: '/game/' + gameId + '/question',
 			data: info
 		})
 	}
