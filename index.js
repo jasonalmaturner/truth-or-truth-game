@@ -23,7 +23,7 @@ app.use(passport.session());
 passport.use(new FacebookStrategy({
 	clientID: '626195034163705',
 	clientSecret: '49d3d82ad4dba3545189e631458e55d0',
-	callbackURL: 'http://localhost:9011/auth/facebook/callback'
+	callbackURL: 'http://truth-or-truth.com/auth/facebook/callback'
 }, function(token, refreshToken, profile, done){
 	User.findOne({'facebookId': profile.id}, function(err, user) {
 		if(err){
