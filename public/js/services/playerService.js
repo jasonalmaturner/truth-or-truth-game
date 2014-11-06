@@ -5,7 +5,7 @@ app.service('playerService', function($http, $q){
 	this.sendQuestion = function(info, gameId){
 		return $http({
 			method: "PUT",
-			url: '/game/' + gameId + '/question',
+			url: '/api/game/' + gameId + '/question',
 			data: info
 		})
 	}
@@ -13,7 +13,7 @@ app.service('playerService', function($http, $q){
 	this.getUser = function(){
 		return $http({
 			method: "GET",
-			url: '/player'
+			url: '/api/player'
 		})
 	}
 

@@ -27,6 +27,15 @@ app.controller('gameCtrl', function($scope, $rootScope, gameService, $location){
 		});
 	}
 
+	$scope.getGames = function(){
+		gameService.getGames().then(function(games){
+			$scope.games = games.data;
+			console.log($scope.games);
+		})
+	}
+
+	$scope.getGames();
+
 	// $scope.addQuestion = function(){
 	// 	gameService.
 	// }

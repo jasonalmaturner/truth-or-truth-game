@@ -77,12 +77,17 @@ var requireAuth = function(req, res, next) {
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/#/create', failureRedirect: '/'}));
-app.post('/create', requireAuth, gameController.addGame);
-app.get('/player', function(req, res){
+app.post('/api/create', requireAuth, gameController.addGame);
+app.get('/api/player', function(req, res){
 	res.json(req.user);
 })
-app.put('/player/:id', userController.addGame);
-app.put('/game/:id/question', gameController.addQuestion);
+app.put('/api/player/:id', userController.addGame);
+app.put('/api/game/:id/question', gameController.addQuestion);
+app.get('/api/game', gameController.getGames);
+app.get('/logout', function(req, res){
+	req.logout();
+	res.redirect('/');
+})
 
 var port = 9011;
 

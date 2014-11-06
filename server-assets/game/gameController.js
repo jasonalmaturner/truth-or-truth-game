@@ -22,6 +22,12 @@ module.exports = {
 				res.status(200).send(res);
 			}
 		})
+	},
+
+	getGames: function (req, res) {
+		gameModel.find().exec(function(err, games){
+			res.send(games);
+		})
 	}
 
 }

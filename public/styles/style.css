@@ -116,12 +116,13 @@ body {
 /* home styles */
 
 .login-register-wrapper {
-	width: 400px;
+	width: 500px;
 	margin: 100px auto 0 auto;
 }
 
 	.login-register-form {
-
+		width: 500px;
+		margin: 10px auto 0 auto;
 	}
 
 		.login-register-menu li {
