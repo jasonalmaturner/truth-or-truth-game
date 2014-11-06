@@ -89,7 +89,7 @@ app.get('/logout', function(req, res){
 	res.redirect('/');
 })
 
-var port = 9011;
+var port = 80;
 
 var databaseReference = "mongodb://localhost/truthOrTruth"
 mongoose.connect(databaseReference);
