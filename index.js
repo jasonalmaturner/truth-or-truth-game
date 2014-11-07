@@ -91,7 +91,7 @@ app.get('/logout', function(req, res){
 
 var port = 80;
 
-var databaseReference = "mongodb://localhost/truthOrTruth"
+var databaseReference = "mongodb://truth-or-truth.com/truthOrTruth"
 mongoose.connect(databaseReference);
 
 var connection = mongoose.connection;
