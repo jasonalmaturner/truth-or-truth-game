@@ -23,7 +23,7 @@ app.use(passport.session());
 passport.use(new FacebookStrategy({
 	clientID: '626195034163705',
 	clientSecret: '49d3d82ad4dba3545189e631458e55d0',
-	callbackURL: 'http://truth-or-truth.com/auth/facebook/callback'
+	callbackURL: process.env.CALLBACK_URL || 'http://localhost:9011/auth/facebook/callback'
 }, function(token, refreshToken, profile, done){
 	User.findOne({'facebookId': profile.id}, function(err, user) {
 		if(err){
@@ -91,7 +91,7 @@ app.get('/logout', function(req, res){
 
 var port = (process.env.EXPRESS_PORT || 9011);
 
-var databaseReference = process.env.EXPRESS_DB/ + 'truthOrTruth' || "mongodb://localhost:27017/truthOrTruth"
+var databaseReference = process.env.EXPRESS_DB || "mongodb://localhost:27017/truthOrTruth"
 mongoose.connect(databaseReference);
 
 var connection = mongoose.connection;
